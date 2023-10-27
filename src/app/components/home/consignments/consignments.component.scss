@@ -1,0 +1,33 @@
+@import "../../../../styles.scss";
+
+.consignment-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  .card {
+    background-color: $background-dark;
+    border-radius: 5px;
+    position: relative;
+    padding: 15px 20px;
+    min-width: 350px;
+    transition: 0.3s;
+    flex-grow: 1;
+    p {
+      margin: 5px 0;
+      font-size: 13px;
+      color: $background-light;
+    }
+    .status-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: $background-light;
+    }
+  }
+  .card.delivered {
+    background-color: $background-disabled;
+  }
+}

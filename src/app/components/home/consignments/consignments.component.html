@@ -1,0 +1,54 @@
+<div class="consignment-card">
+  <div
+    class="card"
+    *ngFor="let a of arr; let i = index"
+    [ngClass]="i == 3 ? 'delivered' : ''"
+  >
+    <table>
+      <tr>
+        <td>
+          <p>Consignee</p>
+        </td>
+        <td><p>: &nbsp; Gng Textiles Pvt. Ltd.</p></td>
+      </tr>
+      <tr>
+        <td>
+          <p>From</p>
+        </td>
+        <td><p>: &nbsp; Ram Nagar, Rudrapur, Uttrakhand.</p></td>
+      </tr>
+      <tr>
+        <td>
+          <p>To</p>
+        </td>
+        <td><p>: &nbsp; Kumbarpet, Banglore, Karnataka.</p></td>
+      </tr>
+      <tr>
+        <td>
+          <p>EDD</p>
+        </td>
+        <td><p>: &nbsp; Evening, Wednesday, 12/10/2023.</p></td>
+      </tr>
+      <tr>
+        <td>
+          <p>GR/LR/Bilty</p>
+        </td>
+        <td><p>: &nbsp; GR5247:534</p></td>
+      </tr>
+      <tr>
+        <td>
+          <p>Status</p>
+        </td>
+        <td>
+          <p>: &nbsp; {{ i == 3 ? "Delivered" : "Running" }}</p>
+        </td>
+      </tr>
+    </table>
+    <div class="status-icon">
+      <div
+        class="pi"
+        [ngClass]="i == 3 ? 'pi-thumbs-up-fill' : 'pi-stopwatch'"
+      ></div>
+    </div>
+  </div>
+</div>

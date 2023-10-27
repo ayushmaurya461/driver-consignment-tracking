@@ -1,0 +1,17 @@
+@import "../../../../styles.scss";
+
+.details-card {
+  height: fit-content;
+  .card {
+    background-color: $background-dark;
+    min-height: fit-content;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    p {
+      font-size: 13px;
+      color: $background-light;
+      margin: 5px 0;
+    }
+  }
+}

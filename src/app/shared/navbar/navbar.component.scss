@@ -1,0 +1,95 @@
+@import "../../../styles.scss";
+.navbar {
+  width: 100%;
+  transition: 0.5s;
+  display: flex;
+  padding: 15px 10vw;
+  transition: 0.5s;
+  position: relative;
+  background-color: $background-dark;
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    transition: 0.5s;
+    color: $background-light;
+  }
+  .balance {
+    position: absolute;
+    right: 10vw;
+    transition: 0.5s;
+    font-size: 15px;
+    top: 25px;
+    color: $background-light;
+    button {
+      background-color: transparent;
+      color: $background-light;
+      transition: 0.5s;
+      border: none;
+      margin-left: 15px;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.navbar.scrolled {
+  transition: 0.5s;
+  background-color: $background-light;
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    transition: 0.5s;
+    color: $background-dark;
+  }
+  .balance {
+    position: absolute;
+    right: 10vw;
+    top: 25px;
+    transition: 0.5s;
+    color: $background-dark;
+    button {
+      background-color: transparent;
+      color: $background-dark;
+      border: none;
+      margin-left: 15px;
+      transition: 0.5s;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    transition: 0.5s;
+    padding: 15px 20px;
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      transition: 0.5s;
+    }
+    .balance {
+      top: 20px;
+      transition: 0.5s;
+      right: 6vw;
+      font-size: 0.9rem;
+      span {
+        display: none;
+        transition: 0.5s;
+      }
+    }
+  }
+  .navbar.scrolled {
+    .logo {
+      font-size: 1.5rem;
+    }
+    padding: 10px 20px;
+    transition: 0.5s;
+    .balance {
+      transition: 0.5s;
+      top: 20px;
+      right: 6vw;
+    }
+  }
+}

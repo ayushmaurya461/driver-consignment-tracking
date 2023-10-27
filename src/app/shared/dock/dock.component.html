@@ -1,0 +1,25 @@
+<div class="dock-container">
+  <p-dock [model]="items" [position]="'bottom'">
+    <ng-template pTemplate="item" let-item>
+      <div
+        routerLink="/{{ item.url }}"
+        routerLinkActive="active"
+        target="_self"
+        (click)="preventDefault($event)"
+        class="dock-button"
+      >
+        <i
+          class="{{ item.icon }}"
+          style="
+            font-size: 1.6rem;
+            position: absolute;
+            bottom: 15px;
+            right: 27%;
+            cursor: pointer;
+            font-weight: 700;
+          "
+        ></i>
+      </div>
+    </ng-template>
+  </p-dock>
+</div>

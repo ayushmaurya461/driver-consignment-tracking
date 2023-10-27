@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+.active {
+  transform: scale(100%);
+  transition: 0.5s;
+  height: 3rem;
+  width: 3rem;
+}
+.dock-container {
+  position: relative;
+  height: 65px;
+  background-color: $background-light;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

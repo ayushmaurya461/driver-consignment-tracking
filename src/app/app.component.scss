@@ -1,0 +1,24 @@
+@import "../styles.scss";
+
+.container-fluid {
+  position: relative;
+  .nav {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: 0.4s;
+  }
+  .container {
+    position: relative;
+    background-color: $background-light;
+    padding: 70px 0px 12px;
+    min-height: 100vh;
+    .dock {
+      position: fixed;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+  }
+}

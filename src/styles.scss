@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+$green: #00927c;
+$background-card: #002b25;
+$background-dark: #00473d;
+$background-light: #f1f1f1;
+$background-disabled: #c0c0c0;
+$shadow: 0 10px 8px #000000a1;
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box-shadow {
+  box-shadow: $shadow;
+}
+
+.dock {
+  .p-dock-item {
+    padding: 0;
+    transform: scale(100%);
+    cursor: pointer;
+  }
+  .p-dock-list::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+  .p-dock-list {
+    background-color: $background-light;
+    padding: 0;
+  }
+  .p-dock .p-dock-action {
+    margin: 0 10px;
+    width: 3rem;
+    transition: 0.9s;
+    height: 3.9rem;
+  }
+  .p-dock div.dock-button {
+    width: 3rem;
+    border: none;
+    outline: none;
+    height: 3rem;
+    text-align: center;
+    color: $background-dark;
+    margin: 0;
+  }
+  .p-dock-item-current {
+    margin: 0 !important;
+    transform: translateY(-30%);
+  }
+  :not(.p-dock-item-current) {
+    margin: 0;
+  }
+}
