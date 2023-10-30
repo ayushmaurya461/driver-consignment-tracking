@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ContainerComponent } from 'src/app/shared/container/container.component';
 
 @Component({
   selector: 'app-maintenance',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContainerComponent],
   templateUrl: './maintenance.component.html',
-  styleUrls: ['./maintenance.component.scss']
+  styleUrls: ['./maintenance.component.scss'],
 })
-export class MaintenanceComponent {
-
-}
+export class MaintenanceComponent {}
