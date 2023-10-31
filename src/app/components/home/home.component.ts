@@ -4,7 +4,7 @@ import { ConsignmentsComponent } from './consignments/consignments.component';
 import { AdvanceDetailsComponent } from './advance-details/advance-details.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   standalone: true,
   imports: [CommonModule, ConsignmentsComponent, AdvanceDetailsComponent],
   templateUrl: './home.component.html',

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ContainerComponent } from 'src/app/shared/container/container.component';
 
 @Component({
-  selector: 'app-trips',
+  selector: 'trips',
   standalone: true,
   imports: [CommonModule, ContainerComponent],
   templateUrl: './trips.component.html',

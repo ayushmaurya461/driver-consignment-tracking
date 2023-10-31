@@ -1,9 +1,5 @@
 <div class="consignment-card">
-  <div
-    class="card"
-    *ngFor="let a of arr; let i = index"
-    [ngClass]="i == 3 ? 'delivered' : ''"
-  >
+  <div class="card" *ngFor="let a of arr" [ngClass]="a == 4 ? 'delivered' : ''">
     <table>
       <tr>
         <td>
@@ -48,14 +44,14 @@
           <p>Status</p>
         </td>
         <td>
-          <p>: &nbsp; {{ i == 3 ? "Delivered" : "Running" }}</p>
+          <p>: &nbsp; {{ a == 4 ? "Delivered" : "Running" }}</p>
         </td>
       </tr>
     </table>
     <div class="status-icon">
       <div
         class="pi"
-        [ngClass]="i == 3 ? 'pi-thumbs-up-fill' : 'pi-stopwatch'"
+        [ngClass]="a == 4 ? 'pi-thumbs-up-fill' : 'pi-stopwatch'"
       ></div>
     </div>
   </div>

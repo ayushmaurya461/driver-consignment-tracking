@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from 'src/app/shared/container/container.component';
 
 @Component({
-  selector: 'app-accounting',
+  selector: 'accounting',
   standalone: true,
   imports: [CommonModule, ContainerComponent],
   templateUrl: './accounting.component.html',

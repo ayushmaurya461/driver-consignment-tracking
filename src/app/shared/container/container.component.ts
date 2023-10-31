@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-container',
+  selector: 'container',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './container.component.html',
