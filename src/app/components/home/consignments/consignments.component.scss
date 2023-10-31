@@ -7,6 +7,20 @@
   column-gap: 10px;
   row-gap: 10px;
   flex-wrap: wrap;
+  .head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    button {
+      height: 30px;
+      border: none;
+      transition: 0.5s;
+      background-color: transparent;
+      color: $background-dark;
+    }
+  }
   .card {
     background-color: $background-dark;
     border-radius: 5px;
@@ -14,10 +28,12 @@
     padding: 15px 20px;
     min-width: 350px;
     transition: 0.3s;
+    overflow: hidden;
+    transform-origin: bottom right;
     flex-grow: 1;
     p {
       margin: 5px 0;
-      font-size: 13px;
+      font-size: 1.3vh;
       color: $background-light;
     }
     .status-icon {
@@ -30,4 +46,8 @@
   .card.delivered {
     background-color: $background-disabled;
   }
+}
+
+.row-gap-0 {
+  row-gap: 0;
 }

@@ -1,5 +1,17 @@
-<div class="consignment-card">
-  <div class="card" *ngFor="let a of arr" [ngClass]="a == 4 ? 'delivered' : ''">
+<div class="consignment-card" [ngClass]="!expanded ? 'row-gap-0' : ''">
+  <div class="head" (click)="expandCollapseCards()">
+    <h2>Consignments</h2>
+    <button
+      class="expand-collapse pi"
+      [ngClass]="!expanded ? 'pi-chevron-down' : ' pi-chevron-up'"
+    ></button>
+  </div>
+  <div
+    class="card"
+    [@expandCollapse]="expanded ? 'expand' : 'collapse'"
+    *ngFor="let a of arr"
+    [ngClass]="a == 4 ? 'delivered' : ''"
+  >
     <table>
       <tr>
         <td>
