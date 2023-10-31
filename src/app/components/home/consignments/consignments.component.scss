@@ -29,7 +29,7 @@
     min-width: 350px;
     transition: 0.3s;
     overflow: hidden;
-    transform-origin: bottom right;
+    transform-origin: left;
     flex-grow: 1;
     p {
       margin: 5px 0;
@@ -50,4 +50,82 @@
 
 .row-gap-0 {
   row-gap: 0;
+}
+
+.timeline {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  > div {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: flex-start;
+    button {
+      padding: 5px 10px;
+      border: none;
+      width: 120px;
+      height: 50px;
+      transition: 1s;
+      cursor: pointer;
+      position: relative;
+      background-color: $background-light;
+      color: $background-dark;
+      z-index: 10;
+    }
+    > button::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      transform: rotate(90deg);
+      width: 100px;
+      background-color: $background-light;
+      right: 10px;
+      top: 78px;
+      z-index: -1;
+    }
+    > button:disabled {
+      color: $background-light;
+    }
+    > button.complete {
+      background-color: $background-dark;
+      color: $background-light;
+      border-radius: 10px;
+    }
+    > button.complete::before {
+      content: "";
+      background-color: $background-dark;
+      transition: background-color 2s;
+    }
+  }
+  > div:nth-child(3) {
+    > button::before {
+      content: "";
+      width: 0px;
+    }
+  }
+}
+div.pod {
+  display: flex;
+  height: 100px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  label {
+    font-size: 12px;
+  }
+  button {
+    width: fit-content;
+    word-wrap: break-word;
+    border: none;
+    background-color: $background-dark;
+    color: $background-light;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-top: 10px;
+  }
 }

@@ -9,15 +9,18 @@
   <div
     class="card"
     [@expandCollapse]="expanded ? 'expand' : 'collapse'"
-    *ngFor="let a of arr"
     [ngClass]="a == 4 ? 'delivered' : ''"
+    *ngFor="let a of arr"
+    (click)="showDialog()"
   >
     <table>
       <tr>
         <td>
           <p>Consignee</p>
         </td>
-        <td><p>: &nbsp; Gng Textiles Pvt. Ltd.</p></td>
+        <td>
+          <p>: &nbsp; Gng Textiles Pvt. Ltd.</p>
+        </td>
       </tr>
       <tr>
         <td>
@@ -68,3 +71,64 @@
     </div>
   </div>
 </div>
+
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '90vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [position]="'bottom'"
+>
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">Update Consignment Status</span>
+  </ng-template>
+  <div class="timeline">
+    <div class="start">
+      <button
+        class="start-btn"
+        [ngClass]="track.start ? 'complete' : ''"
+        [disabled]="track.start"
+        (click)="changeStatus('start')"
+      >
+        Start
+      </button>
+    </div>
+    <div class="dealer-point">
+      <button
+        class="start-btn"
+        [ngClass]="track.dealerPoint ? 'complete' : ''"
+        [disabled]="!track.start"
+        (click)="changeStatus('dealerPoint')"
+      >
+        Dealer Point
+      </button>
+    </div>
+    <div class="delivered">
+      <button
+        class="start-btn"
+        [ngClass]="track.delilvered ? 'complete' : ''"
+        [disabled]="!track.dealerPoint"
+        (click)="changeStatus('delilvered')"
+      >
+        Delivered
+      </button>
+    </div>
+  </div>
+  <div *ngIf="track.delilvered" class="pod">
+    <label for="pod">Please upload POD to complete the consignment.</label>
+    <input
+      type="file"
+      name="pod"
+      id="pod"
+      (change)="setFileName($event)"
+      [(ngModel)]="podFile"
+      hidden
+      #pod
+    />
+    <button (click)="toggleInputPod()">{{ podFileName }}</button>
+  </div>
+  <ng-template pTemplate="footer">
+    <button class="footer-button" (click)="hideDialog()">Save</button>
+  </ng-template>
+</p-dialog>
