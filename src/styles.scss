@@ -27,18 +27,19 @@ $primaryButtonHoverStyles: (
   outline: 1px solid $background-light,
 );
 
+::-webkit-scrollbar {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-*::-webkit-scrollbar {
-  width: 0;
-}
+
 body {
   margin: 0;
   padding: 0;
 }
-
 h2 {
   font-weight: 700;
   font-size: 1.2rem;

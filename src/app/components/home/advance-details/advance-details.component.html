@@ -39,6 +39,38 @@
         </tr>
       </tbody>
     </table>
-    <button>Request</button>
+    <button (click)="showDialog()">Request</button>
   </div>
 </div>
+
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '90vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [position]="'bottom'"
+>
+  <ng-template pTemplate="header">
+    <span class="text-xl font-bold">Request</span>
+  </ng-template>
+  <div class="request">
+    <div class="amount">
+      <div class="logo">
+        <img src="assets/advance-details/cash.svg" alt="" />
+      </div>
+      <p>Available : &#8377; 7.3k</p>
+      <input type="text" name="cash" id="cash" placeholder="Amount" />
+    </div>
+    <div class="diesel">
+      <div class="logo">
+        <img src="assets/advance-details/petrol-pump-icon.svg" alt="" />
+      </div>
+      <p>Available : 251L</p>
+      <input type="text" name="fuel" id="fuel" placeholder="Fuel" />
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <button class="footer-button" (click)="hideDialog()">Request</button>
+  </ng-template>
+</p-dialog>

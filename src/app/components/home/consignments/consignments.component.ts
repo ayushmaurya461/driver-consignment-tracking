@@ -16,6 +16,7 @@ export class ConsignmentsComponent {
   arr = [1, 2, 3, 4];
   expanded = false;
   podFile: any;
+  selectedPod: string | ArrayBuffer | null = null;
   podFileName: string = 'Choose File';
   track: any = {
     start: false,
@@ -47,8 +48,24 @@ export class ConsignmentsComponent {
   setFileName(evnt: any) {
     if (evnt.target.files[0]?.name) {
       this.podFileName = evnt.target.files[0].name;
+      const file = evnt.target.files[0];
+      if (file) {
+        this.showPreview(file);
+      }
     } else {
       this.podFileName = 'Choose File';
     }
+  }
+  showPreview(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.selectedPod = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+  removePod() {
+    this.selectedPod = null;
+    this.podFile = '';
+    this.podFileName = 'Choose File';
   }
 }

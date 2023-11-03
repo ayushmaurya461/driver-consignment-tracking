@@ -39,3 +39,42 @@
     }
   }
 }
+.request {
+  display: flex;
+  flex-direction: row;
+  .diesel,
+  .amount {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      font-size: 13px;
+    }
+    input {
+      width: 80%;
+      margin: 40px auto;
+      font-size: 13px;
+      border: 1px solid #c1c1c1;
+      border-radius: 5px;
+      padding: 5px 10px !important;
+      height: 30px;
+    }
+    input::placeholder {
+      padding: 5px 10px !important;
+    }
+  }
+  .amount {
+    border-right: 1px solid #e7e7e7;
+  }
+}

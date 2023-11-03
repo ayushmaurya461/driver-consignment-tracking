@@ -115,8 +115,14 @@
       </button>
     </div>
   </div>
+  <div class="pod-image" *ngIf="podFile">
+    <img [src]="selectedPod" alt="" />
+    <button class="pi pi-times" (click)="removePod()"></button>
+  </div>
   <div *ngIf="track.delilvered" class="pod">
-    <label for="pod">Please upload POD to complete the consignment.</label>
+    <label for="pod" *ngIf="!podFile"
+      >Please upload POD to complete the consignment.</label
+    >
     <input
       type="file"
       name="pod"
@@ -124,6 +130,7 @@
       (change)="setFileName($event)"
       [(ngModel)]="podFile"
       hidden
+      accept="image/*"
       #pod
     />
     <button (click)="toggleInputPod()">{{ podFileName }}</button>
