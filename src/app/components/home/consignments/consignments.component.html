@@ -75,7 +75,7 @@
 <p-dialog
   [(visible)]="visible"
   [modal]="true"
-  [style]="{ width: '90vw' }"
+  [style]="{ width: '400px' }"
   [draggable]="false"
   [resizable]="false"
   [position]="'bottom'"
@@ -116,24 +116,14 @@
     </div>
   </div>
   <div class="pod-image" *ngIf="podFile">
-    <img [src]="selectedPod" alt="" />
+    <img src="{{ podFile }}" alt="" />
     <button class="pi pi-times" (click)="removePod()"></button>
   </div>
   <div *ngIf="track.delilvered" class="pod">
-    <label for="pod" *ngIf="!podFile"
-      >Please upload POD to complete the consignment.</label
-    >
-    <input
-      type="file"
-      name="pod"
-      id="pod"
-      (change)="setFileName($event)"
-      [(ngModel)]="podFile"
-      hidden
-      accept="image/*"
-      #pod
-    />
-    <button (click)="toggleInputPod()">{{ podFileName }}</button>
+    <label for="pod" *ngIf="!podFile">
+      Please upload POD to complete the consignment.
+    </label>
+    <button (click)="selectFromFiles()">{{ podFileName }}</button>
   </div>
   <ng-template pTemplate="footer">
     <button class="footer-button" (click)="hideDialog()">Save</button>

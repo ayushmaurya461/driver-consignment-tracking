@@ -132,13 +132,15 @@ div.pod {
   }
 }
 .pod-image {
-  height: auto;
+  height: 150px;
   padding: 0px 40px;
   width: 100%;
+  display: flex;
+  justify-content: center;
   position: relative;
   img {
     height: 100%;
-    width: 100%;
+    width: auto;
   }
   button {
     position: absolute;
@@ -149,5 +151,23 @@ div.pod {
     right: 40px;
     top: 0px;
     border-radius: 3px;
+  }
+}
+.select {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  div {
+    max-width: 30vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    img {
+      height: 50px;
+      width: auto;
+    }
   }
 }

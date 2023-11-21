@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { expandCollapse } from 'src/app/shared/animations/expand-collapse.animation';
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule } from '@angular/forms';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-consignments',
@@ -15,9 +16,9 @@ import { FormsModule } from '@angular/forms';
 export class ConsignmentsComponent {
   arr = [1, 2, 3, 4];
   expanded = false;
+  visible: boolean = false;
   podFile: any;
-  selectedPod: string | ArrayBuffer | null = null;
-  podFileName: string = 'Choose File';
+  podFileName: string | undefined = 'Choose File';
   track: any = {
     start: false,
     dealerPoint: false,
@@ -28,7 +29,6 @@ export class ConsignmentsComponent {
     this.expanded = !this.expanded;
   }
 
-  visible: boolean = false;
 
   showDialog() {
     this.visible = true;
@@ -36,35 +36,22 @@ export class ConsignmentsComponent {
   hideDialog() {
     this.visible = false;
   }
-  toggleInputPod() {
-    const podInput = document.querySelector('#pod') as HTMLElement;
-    if (podInput) {
-      podInput.click();
-    }
+  async selectFromFiles() {
+    await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl
+    }).then(image => {
+      if (image) {
+        this.podFile = image.dataUrl;
+        this.podFileName = 'Change'
+      }
+    });
   }
   changeStatus(field: string) {
     this.track[field] = true;
   }
-  setFileName(evnt: any) {
-    if (evnt.target.files[0]?.name) {
-      this.podFileName = evnt.target.files[0].name;
-      const file = evnt.target.files[0];
-      if (file) {
-        this.showPreview(file);
-      }
-    } else {
-      this.podFileName = 'Choose File';
-    }
-  }
-  showPreview(file: File) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.selectedPod = reader.result;
-    };
-    reader.readAsDataURL(file);
-  }
   removePod() {
-    this.selectedPod = null;
     this.podFile = '';
     this.podFileName = 'Choose File';
   }
