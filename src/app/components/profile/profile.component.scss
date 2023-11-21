@@ -1,13 +1,2 @@
 @import "../../../styles.scss";
-
-p,
-h5 {
-  font-size: 13px;
-  color: $background-light;
-  text-align: center;
-  margin: 5px 0;
-}
-h5 {
-  font-size: 14px;
-  margin: auto !important;
-}
+@import "../../../universal-styles.scss";

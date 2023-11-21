@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@import "../../../../universal-styles.scss";
 
 .details-card {
   height: fit-content;
@@ -41,6 +41,7 @@
 }
 .request {
   display: flex;
+  padding: 20px 0;
   flex-direction: row;
   .diesel,
   .amount {

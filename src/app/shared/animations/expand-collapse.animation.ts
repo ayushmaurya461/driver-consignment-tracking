@@ -10,9 +10,9 @@ export const expandCollapse = trigger('expandCollapse', [
   state(
     'expand',
     style({
-      height: '230px',
       padding: '20px 20px',
-      transform: 'scaleX(1)',
+      transform: 'scaleX(1) scaleY(1)',
+      opacity: 1,
     })
   ),
   state(
@@ -20,7 +20,8 @@ export const expandCollapse = trigger('expandCollapse', [
     style({
       height: '0px',
       padding: '0px 20px',
-      transform: 'scaleX(0)',
+      transform: 'scaleX(0) scaleY(0)',
+      opacity: 0,
     })
   ),
   transition('collapse <=> expand', [animate('0.6s ease')]),

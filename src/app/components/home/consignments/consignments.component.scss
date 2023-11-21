@@ -1,4 +1,4 @@
-@import "../../../../styles.scss";
+@import "../../../../universal-styles.scss";
 
 .consignment-card {
   width: 100%;
@@ -26,7 +26,7 @@
     border-radius: 5px;
     position: relative;
     padding: 15px 20px;
-    min-width: 350px;
+    min-width: 300px;
     transition: 0.3s;
     overflow: hidden;
     transform-origin: left;
@@ -55,6 +55,7 @@
 .timeline {
   width: 100%;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -67,6 +68,7 @@
     button {
       padding: 5px 10px;
       border: none;
+      border-radius: 10px;
       width: 120px;
       height: 40px;
       font-size: 13px;
@@ -94,7 +96,6 @@
     > button.complete {
       background-color: $background-dark;
       color: $background-light;
-      border-radius: 10px;
     }
     > button.complete::before {
       content: "";
